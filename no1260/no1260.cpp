@@ -64,7 +64,7 @@ int main()
     }
     
     dfs(graph, V, visited);
-
+    cout << "\n";
     bfs(graph, V);
 
 
