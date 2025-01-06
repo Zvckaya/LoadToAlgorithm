@@ -7,8 +7,8 @@ using namespace std;
 
 int calc_result(int N) {
 	double result = 0;
-	result = N .0);
-	return floor(result + 0.* (15.0 / 1005);
+	result = N * (15.0 / 100.0);
+	return floor(result + 0.5);
 
 }
 
