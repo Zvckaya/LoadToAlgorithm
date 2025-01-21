@@ -5,12 +5,6 @@
 #include <cmath>
 using namespace std;
 
-struct Compare {
-	bool operator()(int a, int b) {
-		return a < b;
-	}
-};
-
 
 int main()
 {
