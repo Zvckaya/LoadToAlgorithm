@@ -30,7 +30,6 @@ int main() {
             int start = 0;
             for (int i = 0; i < (int)inside.size(); i++) {
                 if (inside[i] == ',') {
-                    // substring [start..i-1]
                     dq.push_back(stoi(inside.substr(start, i - start)));
                     start = i + 1;
                 }
