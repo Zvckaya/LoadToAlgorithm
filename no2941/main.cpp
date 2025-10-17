@@ -49,25 +49,20 @@ int main() {
 
     while (cursor < s.length())
     {
-        if (cursor < s.length() - 3) {
             if (secondCompare(s.substr(cursor,2))) {
                 cursor += 2;
                 a++;
             }
-            if (secondCompare(s.substr(cursor,3))) {
+            else if (thirdCompare(s.substr(cursor,3))) {
                 cursor += 3;
                 a++;
             }
-        }
-        else if(cursor < s.length() - 2) {
-            if (secondCompare(s.substr(cursor,2))) {
-                cursor += 2;
+            else {
+                cursor++;
                 a++;
             }
-        }
-        else {
-            cursor++;
-        }
+            
+       
     }
     
     cout << a;
