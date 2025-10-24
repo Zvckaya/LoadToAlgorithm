@@ -10,40 +10,29 @@ int main() {
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-	int n;
+	vector<vector<int>> v(100, vector<int>(100, 0));
+
+	int n = 0, cnt = 0;
 	cin >> n;
 
-	int sum = 0;
-	vector<pair<int, int>> v(n);
-
 	for (int i = 0; i < n; i++) {
-
 		int x, y;
-		if (i == 0) {
-			cin >> x >> y;
-			v[i] = { x,y };
-			sum += 100;
-		}
-		else {
-			cin >> x >> y;
-			v[i] = { x,y };
-			for (int j = 0; j < i; j++) {
-				if (abs(v[j].first - x) < 10) {
-					if (abs(v[j].second - y) < 10) {
-						int a = 10-abs(v[j].first - x);
-						int b = 10-abs(v[j].second - y);
-						sum += 100 - (a*b);
-					}
-					
-				}
-				else {
-					sum += 100;
+		cin >> x >> y;
+		for (int yi = y; yi < y + 10; yi++) {
+			for (int xi = x; xi < x + 10; xi++) {
+				if (v[xi][yi] != 1) {
+					v[xi][yi] = 1;
 				}
 			}
 		}
 	}
 
-	cout << sum;
-
+	for (int i = 0; i < 100; i++) {
+		for (int j = 0; j < 100; j++) {
+			if (v[i][j] == 1)
+				cnt++;
+		}
+	}
+	cout << cnt;
 
 }

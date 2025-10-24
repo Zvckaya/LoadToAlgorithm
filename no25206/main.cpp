@@ -5,21 +5,21 @@
 using namespace std;
 
 float getVal(string grade) {
-	if (grade.compare("A+"))
+	if (grade.compare("A+")==0)
 		return 4.5;
-	else if (grade.compare("A0"))
+	else if (grade.compare("A0") == 0)
 		return 4.0;
-	else if (grade.compare("B+"))
+	else if (grade.compare("B+") == 0)
 		return 3.5;
-	else if (grade.compare("B0"))
+	else if (grade.compare("B0") == 0)
 		return 3.0;
-	else if (grade.compare("C+"))
+	else if (grade.compare("C+") == 0)
 		return 2.5;
-	else if (grade.compare("C0"))
+	else if (grade.compare("C0") == 0)
 		return 2.0;
-	else if (grade.compare("D+"))
+	else if (grade.compare("D+") == 0)
 		return 1.5;
-	else if (grade.compare("D0"))
+	else if (grade.compare("D0") == 0)
 		return 1.0;
 	else
 		return 0;
@@ -38,14 +38,17 @@ int main() {
 		stringstream ss(s);
 		string a, b, c;
 		ss >> a >> b >> c;
-		float g = stof(b);
-		if (c.compare("P")==false) {
-			SUM += g;
-			GRADE += getVal(c) * g;
+
+		if (c.compare("P") == 0)
+			continue;
+		else {
+			float f = getVal(c);
+			GRADE += f * stof(b);
+			SUM+= stof(b);
 		}
 
 	}
 	
-	cout << SUM / GRADE;
+	cout << GRADE / SUM;
 
 }
