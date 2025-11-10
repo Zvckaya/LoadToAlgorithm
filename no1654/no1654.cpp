@@ -23,6 +23,7 @@
 
         long long lo = 1;
         long long hi = *max_element(lines.begin(),lines.end());
+        
         while (lo <=hi)
         {
             long long mid = lo + (hi - lo) / 2;
