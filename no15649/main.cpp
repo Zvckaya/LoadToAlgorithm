@@ -19,16 +19,18 @@ void search() {
 		return;
 	}
 	else {
-	/*	for (int i = v.empty() ? 0 : v.back() + 1; i < N; i++) {
-
-		}*/
-		for (int i = 0; i < N; i++) {
+		for (int i = v.empty() ? 0 : v.back() + 1; i < N; i++) {
+			v.push_back(i + 1);
+			search();
+			v.pop_back();
+		}
+		/*for (int i = 0; i < N; i++) {
 			if (!v.empty() && (v.back() >= i + 1))
 				continue;
 			v.push_back(i + 1);
 			search();
 			v.pop_back();
-		}
+		}*/
 		/*for (int i = 0; i < N; i++) {
 			if (v.empty()) {
 				v.push_back(i + 1);
